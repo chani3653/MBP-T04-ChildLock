@@ -93,6 +93,7 @@ project-root
 본 프로젝트는 UML 기반 설계를 수행한 후 코드를 구현한다.
 
 설계 프로세스
+```
 Use Case 정의
 ↓
 Sequence Diagram 작성
@@ -102,6 +103,7 @@ Controller 설계
 C 코드 구현
 ↓
 Unit Test 수행
+```
 
 예시 기능
 
