@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36" version="29.6.1">
+  <diagram name="페이지-1" id="YXxSKv94C9Hn19UX7427">
+    <mxGraphModel dx="1751" dy="1506" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=16;fontStyle=1;" value="[상태 다이어그램] 전자식 차일드락 시스템 — 최상위 수준 (Top-Level State Diagram)" vertex="1">
+          <mxGeometry height="30" width="700" x="440" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="3" parent="1" style="ellipse;html=1;shape=mxgraph.flowchart.start_2;fillColor=#000000;fontSize=14;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="30" width="30" x="210" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1565C0;strokeWidth=2;fontSize=11;align=left;spacingLeft=10;verticalAlign=top;spacingTop=5;" value="&lt;b&gt;S0: 초기화&lt;/b&gt;&#xa;(Initialization)&#xa;─────────&#xa;entry / NVM에서 이전 상태 복원&#xa;entry / CAN 통신 초기화&#xa;entry / 액추에이터 자가진단 실행&#xa;exit / 진단 결과 기록" vertex="1">
+          <mxGeometry height="130" width="260" x="340" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;strokeWidth=2;fontSize=11;align=left;spacingLeft=10;verticalAlign=top;spacingTop=5;" value="&lt;b&gt;S1: 해제&lt;/b&gt;&#xa;(Unlocked)&#xa;─────────&#xa;entry / 클러스터 표시등 OFF&#xa;entry / 파워 윈도우 활성화&#xa;&#xa;뒷좌석 도어: 내부 핸들 개방 가능" vertex="1">
+          <mxGeometry height="130" width="260" x="169" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF3E0;strokeColor=#E65100;strokeWidth=2;fontSize=11;align=left;spacingLeft=10;verticalAlign=top;spacingTop=5;" value="&lt;b&gt;S2: 잠금&lt;/b&gt;&#xa;(Locked)&#xa;─────────&#xa;entry / 클러스터 표시등 ON&#xa;entry / 파워 윈도우 비활성화&#xa;entry / 확인음 1회 출력&#xa;&#xa;뒷좌석 도어: 내부 핸들 작동 불가" vertex="1">
+          <mxGeometry height="140" width="270" x="570" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFEBEE;strokeColor=#C62828;strokeWidth=3;fontSize=11;align=left;spacingLeft=10;verticalAlign=top;spacingTop=5;" value="&lt;b&gt;S3: 비상 해제&lt;/b&gt;&#xa;(Emergency Released)&#xa;─────────&#xa;entry / 모든 도어 잠금 즉시 해제&#xa;entry / 클러스터 비상 해제 표시&#xa;&#xa;재시동 전까지 상태 유지" vertex="1">
+          <mxGeometry height="130" width="260" x="1050" y="495" as="geometry" />
+        </mxCell>
+        <mxCell id="8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#6A1B9A;strokeWidth=2;fontSize=11;align=left;spacingLeft=10;verticalAlign=top;spacingTop=5;" value="&lt;b&gt;S4: 전원 차단 대기&lt;/b&gt;&#xa;(Power-Off Standby)&#xa;─────────&#xa;entry / 3분 타이머 시작&#xa;entry / 현재 상태 NVM 저장&#xa;exit / 타이머 정지&#xa;&#xa;버튼 조작 가능 (3분 이내)" vertex="1">
+          <mxGeometry height="150" width="260" x="290" y="770" as="geometry" />
+        </mxCell>
+        <mxCell id="9" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ECEFF1;strokeColor=#546E7A;strokeWidth=2;fontSize=11;align=left;spacingLeft=10;verticalAlign=top;spacingTop=5;" value="&lt;b&gt;S5: 비활성&lt;/b&gt;&#xa;(Inactive)&#xa;─────────&#xa;entry / 버튼 입력 무시 설정&#xa;entry / ROA 모니터링 트리거&#xa;exit / ROA 모니터링 종료&#xa;&#xa;마지막 잠금 상태 NVM 보존" vertex="1">
+          <mxGeometry height="150" width="260" x="690" y="770" as="geometry" />
+        </mxCell>
+        <mxCell id="10" parent="1" style="ellipse;html=1;shape=mxgraph.flowchart.terminate;fillColor=#000000;fontSize=14;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="30" width="30" x="1180" y="770" as="geometry" />
+        </mxCell>
+        <mxCell id="11" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;strokeWidth=2;fontSize=11;fontStyle=1;" value="시동 ON">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="240" y="305" as="sourcePoint" />
+            <mxPoint x="340" y="305" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="12" edge="1" parent="1" source="4" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=10;entryX=0.5;entryY=0;exitX=0.2;exitY=1;" target="5" value="[NVM 복원값 = 해제]">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="13" edge="1" parent="1" source="4" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=10;entryX=0.5;entryY=0;exitX=0.8;exitY=1;" target="6" value="[NVM 복원값 = 잠금]">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="14" edge="1" parent="1" source="5" style="html=1;verticalAlign=top;endArrow=block;endFill=1;strokeWidth=2;fontSize=11;fontColor=#E65100;fontStyle=1;exitX=0.999;exitY=0.312;exitDx=0;exitDy=0;exitPerimeter=0;" value="운전자 버튼 누름&#xa;(토글: 해제→잠금)">
+          <mxGeometry relative="1" y="20" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="450" y="540" as="sourcePoint" />
+            <mxPoint x="570" y="540" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="15" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;strokeWidth=2;fontSize=11;fontColor=#2E7D32;fontStyle=1;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" target="5" value="운전자 버튼 누름&#xa;(토글: 잠금→해제)">
+          <mxGeometry relative="1" y="20" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="570" y="600" as="sourcePoint" />
+            <mxPoint x="450" y="600" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="16" edge="1" parent="1" source="5" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;strokeWidth=2;fontSize=11;fontColor=#C62828;fontStyle=1;dashed=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;exitX=0.75;exitY=0;exitDx=0;exitDy=0;" target="7" value="에어백 전개 / 충돌 감지">
+          <mxGeometry relative="1" x="0.5779" y="-90" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="400" y="470" />
+              <mxPoint x="1000" y="470" />
+              <mxPoint x="1060" y="480" />
+            </Array>
+            <mxPoint x="400" y="500" as="sourcePoint" />
+            <mxPoint x="1000" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="17" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;strokeWidth=2;fontColor=#C62828;dashed=0;strokeColor=#C62828;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="7" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="840" y="560" as="sourcePoint" />
+            <mxPoint x="970" y="560" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="18" edge="1" parent="1" style="html=1;verticalAlign=middle;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;exitX=0.3;exitY=1;entryX=0.3;entryY=0;" value="시동 OFF">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="290" y="630" as="sourcePoint" />
+            <mxPoint x="370" y="770" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="19" edge="1" parent="1" style="html=1;verticalAlign=middle;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;exitX=0.5;exitY=1;entryX=0.7;entryY=0;" value="시동 OFF">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="690" y="640" as="sourcePoint" />
+            <mxPoint x="490" y="770" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="20" edge="1" parent="1" style="html=1;verticalAlign=middle;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=10;curved=1;exitX=0;exitY=0.3;entryX=0;entryY=1;" value="3분 이내&#xa;버튼 누름&#xa;(토글)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="160" y="720" />
+            </Array>
+            <mxPoint x="290" y="810" as="sourcePoint" />
+            <mxPoint x="220" y="630" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="21" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;strokeWidth=2;fontSize=11;fontStyle=1;" value="3분 타이머 만료">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="550" y="845" as="sourcePoint" />
+            <mxPoint x="690" y="845" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="22" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;strokeWidth=2;fontSize=11;fontStyle=1;curved=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="4" value="시동 재시작 (ON)">
+          <mxGeometry relative="1" x="0.1482" y="39" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="890" y="690" />
+              <mxPoint x="840" y="335" />
+            </Array>
+            <mxPoint x="820" y="770" as="sourcePoint" />
+            <mxPoint x="560" y="335" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="23" edge="1" parent="1" source="7" style="html=1;verticalAlign=top;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=10;curved=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" value="시스템 재시동&#xa;(정비 후)">
+          <mxGeometry relative="1" x="0.0937" y="25" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="1100" y="305" />
+            </Array>
+            <mxPoint x="1100" y="500" as="sourcePoint" />
+            <mxPoint x="600" y="305" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="24" edge="1" parent="1" source="7" style="html=1;verticalAlign=middle;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=10;entryX=0;entryY=0;entryDx=181;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="25" value="전원 완전 차단">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1130" y="630" as="sourcePoint" />
+            <mxPoint x="1195" y="770" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="25" parent="1" style="shape=note;whiteSpace=wrap;html=1;size=18;fillColor=#FFF9C4;strokeColor=#d6b656;fontSize=11;align=left;spacingLeft=10;verticalAlign=top;spacingTop=20;" value="&lt;b&gt;상태 설명&lt;/b&gt;&#xa;● S0: 시동 ON 시 초기화, NVM에서 이전 상태 복원&#xa;● S1: 차일드락 비활성, 뒷좌석 도어 내부 개방 가능&#xa;● S2: 차일드락 활성, 뒷좌석 도어 내부 개방 불가, 윈도우 비활성&#xa;● S3: 충돌/에어백 전개 시 강제 해제, 재시동 전까지 유지&#xa;● S4: 시동 OFF 후 3분 이내, 버튼 조작 가능&#xa;● S5: 시동 OFF 후 3분 경과, 버튼 불가, ROA만 동작" vertex="1">
+          <mxGeometry height="170" width="380" x="1000" y="760" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

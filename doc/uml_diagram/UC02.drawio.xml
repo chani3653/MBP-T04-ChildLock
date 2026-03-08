@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36" version="29.6.1">
+  <diagram name="페이지-1" id="A-TIAdYeHtLzIsYe26s1">
+    <mxGraphModel dx="8173" dy="7027" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" parent="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=18;fontStyle=1;fontColor=#B71C1C;" value="[시퀀스 다이어그램] UC-002 : 충돌 시 비상 해제 — Main Success Scenario" vertex="1">
+          <mxGeometry height="40" width="800" x="790" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="3" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=12;fontStyle=1;" value="에어백 ECU&#xa;(Airbag ECU)" vertex="1">
+          <mxGeometry height="60" width="40" x="600" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#424242;strokeWidth=2;fontSize=12;" value="«boundary»&#xa;AirbagIF&#xa;에어백 신호 수신" vertex="1">
+          <mxGeometry height="60" width="160" x="730" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFF9C4;strokeColor=#F9A825;strokeWidth=2;fontSize=12;" value="«control»&#xa;EmergencyController&#xa;(BCM/IBU)" vertex="1">
+          <mxGeometry height="60" width="180" x="970" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#C8E6C9;strokeColor=#2E7D32;strokeWidth=2;fontSize=12;" value="«entity»&#xa;CrashEvent&#xa;충돌 이벤트 정보" vertex="1">
+          <mxGeometry height="60" width="160" x="1230" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#C8E6C9;strokeColor=#2E7D32;strokeWidth=2;fontSize=12;" value="«entity»&#xa;LockState&#xa;잠금 상태 정보" vertex="1">
+          <mxGeometry height="60" width="150" x="1470" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#424242;strokeWidth=2;fontSize=12;" value="«boundary»&#xa;CANBusIF&#xa;CAN 통신" vertex="1">
+          <mxGeometry height="60" width="150" x="1700" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="9" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#424242;strokeWidth=2;fontSize=12;" value="«boundary»&#xa;DoorActuatorIF&#xa;도어 DCU (좌/우)" vertex="1">
+          <mxGeometry height="60" width="170" x="1940" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="10" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 4;strokeColor=#BDBDBD;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="620" y="640" as="sourcePoint" />
+            <mxPoint x="620" y="1730" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="11" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 4;strokeColor=#BDBDBD;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="810" y="640" as="sourcePoint" />
+            <mxPoint x="810" y="1730" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="12" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 4;strokeColor=#BDBDBD;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1060" y="640" as="sourcePoint" />
+            <mxPoint x="1060" y="1730" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="13" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 4;strokeColor=#BDBDBD;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1310" y="640" as="sourcePoint" />
+            <mxPoint x="1310" y="1730" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="14" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 4;strokeColor=#BDBDBD;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1545" y="640" as="sourcePoint" />
+            <mxPoint x="1545" y="1730" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="15" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 4;strokeColor=#BDBDBD;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1775" y="640" as="sourcePoint" />
+            <mxPoint x="1775" y="1730" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="16" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 4;strokeColor=#BDBDBD;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="2025" y="640" as="sourcePoint" />
+            <mxPoint x="2025" y="1730" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="17" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E0E0E0;strokeColor=#9E9E9E;" value="" vertex="1">
+          <mxGeometry height="50" width="12" x="615" y="680" as="geometry" />
+        </mxCell>
+        <mxCell id="18" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E0E0E0;strokeColor=#9E9E9E;" value="" vertex="1">
+          <mxGeometry height="80" width="12" x="805" y="690" as="geometry" />
+        </mxCell>
+        <mxCell id="19" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFF9C4;strokeColor=#F9A825;" value="" vertex="1">
+          <mxGeometry height="620" width="12" x="1055" y="780" as="geometry" />
+        </mxCell>
+        <mxCell id="20" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#C8E6C9;strokeColor=#2E7D32;" value="" vertex="1">
+          <mxGeometry height="50" width="12" x="1305" y="840" as="geometry" />
+        </mxCell>
+        <mxCell id="21" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#C8E6C9;strokeColor=#2E7D32;" value="" vertex="1">
+          <mxGeometry height="50" width="12" x="1540" y="910" as="geometry" />
+        </mxCell>
+        <mxCell id="22" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E0E0E0;strokeColor=#9E9E9E;" value="" vertex="1">
+          <mxGeometry height="90" width="12" x="1770" y="1060" as="geometry" />
+        </mxCell>
+        <mxCell id="23" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E0E0E0;strokeColor=#9E9E9E;" value="" vertex="1">
+          <mxGeometry height="170" width="12" x="2020" y="1100" as="geometry" />
+        </mxCell>
+        <mxCell id="24" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#C8E6C9;strokeColor=#2E7D32;" value="" vertex="1">
+          <mxGeometry height="50" width="12" x="1540" y="1340" as="geometry" />
+        </mxCell>
+        <mxCell id="25" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;strokeWidth=2;fontSize=12;" value="1. broadcastCrashEvent(accelerationData, airbagDeployed=true)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="627" y="700" as="sourcePoint" />
+            <mxPoint x="805" y="700" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="26" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;strokeWidth=2;fontSize=12;" value="2. onCrashDetected(severity=HIGH, airbagDeployed=true)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="817" y="790" as="sourcePoint" />
+            <mxPoint x="1055" y="790" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="27" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;strokeWidth=2;fontSize=12;" value="3. storeCrashInfo(severity, timestamp, airbagStatus)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1067" y="850" as="sourcePoint" />
+            <mxPoint x="1305" y="850" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="28" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;dashed=1;dashPattern=6 4;strokeWidth=2;fontSize=11;fontColor=#616161;" value="3a. return OK (저장 완료)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1305" y="880" as="sourcePoint" />
+            <mxPoint x="1067" y="880" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="29" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;strokeWidth=2;fontSize=12;" value="4. getCurrentState()">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1067" y="920" as="sourcePoint" />
+            <mxPoint x="1540" y="920" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="30" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;dashed=1;dashPattern=6 4;strokeWidth=2;fontSize=11;fontColor=#616161;" value="4a. return currentState = LOCKED">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1540" y="955" as="sourcePoint" />
+            <mxPoint x="1067" y="955" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="31" edge="1" parent="1" style="html=1;verticalAlign=middle;endArrow=block;endFill=1;strokeWidth=2;fontSize=11;align=left;rounded=1;" value="5. 비상 해제 판단&#xa;   airbagDeployed=true AND state=LOCKED&#xa;   → EMERGENCY_UNLOCK 명령 생성">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1180" y="990" />
+              <mxPoint x="1180" y="1050" />
+            </Array>
+            <mxPoint x="1067" y="990" as="sourcePoint" />
+            <mxPoint x="1067" y="1050" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="32" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;strokeWidth=2;fontSize=12;fontColor=#C62828;fontStyle=1;" value="6. sendEmergencyUnlock(PRIORITY=HIGHEST, target=ALL_REAR)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1067" y="1080" as="sourcePoint" />
+            <mxPoint x="1770" y="1080" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="33" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;strokeWidth=2;fontSize=12;" value="7a. forceUnlatch(doorLeft)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1782" y="1110" as="sourcePoint" />
+            <mxPoint x="2020" y="1110" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="34" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;strokeWidth=2;fontSize=12;" value="7b. forceUnlatch(doorRight)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1782" y="1145" as="sourcePoint" />
+            <mxPoint x="2020" y="1145" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="35" edge="1" parent="1" style="html=1;verticalAlign=middle;endArrow=block;endFill=1;strokeWidth=2;fontSize=11;align=left;rounded=1;" value="8. 액추에이터 해제 방향 구동&#xa;   내부 핸들 연결 기구 해제 위치 이동">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2120" y="1170" />
+              <mxPoint x="2120" y="1220" />
+            </Array>
+            <mxPoint x="2032" y="1170" as="sourcePoint" />
+            <mxPoint x="2032" y="1220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="36" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;dashed=1;dashPattern=6 4;strokeWidth=2;fontSize=11;fontColor=#616161;" value="9. return ACK(left=UNLOCKED, right=UNLOCKED)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="2020" y="1270" as="sourcePoint" />
+            <mxPoint x="1782" y="1270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="37" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;dashed=1;dashPattern=6 4;strokeWidth=2;fontSize=11;fontColor=#616161;" value="9a. return emergencyACK(allDoorsUnlocked=true)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1770" y="1305" as="sourcePoint" />
+            <mxPoint x="1067" y="1305" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="38" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;strokeWidth=2;fontSize=12;fontColor=#C62828;fontStyle=1;" value="10. updateState(EMERGENCY_RELEASED)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1067" y="1350" as="sourcePoint" />
+            <mxPoint x="1540" y="1350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="39" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;dashed=1;dashPattern=6 4;strokeWidth=2;fontSize=11;fontColor=#616161;" value="10a. return OK">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1540" y="1380" as="sourcePoint" />
+            <mxPoint x="1067" y="1380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="40" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#E65100;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="120" width="1600" x="580" y="1460" as="geometry" />
+        </mxCell>
+        <mxCell id="41" parent="1" style="text;html=1;fontSize=14;fontStyle=1;fillColor=#E65100;fontColor=#FFFFFF;rounded=1;spacing=4;" value="  alt  " vertex="1">
+          <mxGeometry height="25" width="50" x="580" y="1460" as="geometry" />
+        </mxCell>
+        <mxCell id="42" parent="1" style="text;html=1;fontSize=13;fontStyle=5;fontColor=#E65100;align=left;" value="[AF-002-1] CAN 버스 단선 또는 BCM/IBU 무응답" vertex="1">
+          <mxGeometry height="25" width="500" x="640" y="1474" as="geometry" />
+        </mxCell>
+        <mxCell id="43" parent="1" style="text;html=1;fontSize=12;fontColor=#424242;align=left;" value="→ 에어백 ECU가 아날로그 펄스(+ 방향)를 직접 도어 DCU에 전송하여 잠금 해제 (Continental 특허 US9334681B2: 양극성 펄스 방향으로 잠금/해제 구분)" vertex="1">
+          <mxGeometry height="25" width="1000" x="660" y="1499" as="geometry" />
+        </mxCell>
+        <mxCell id="44" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=8 4;strokeColor=#E0E0E0;strokeWidth=2;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="580" y="1545" as="sourcePoint" />
+            <mxPoint x="2180" y="1545" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="45" parent="1" style="text;html=1;fontSize=13;fontStyle=5;fontColor=#E65100;align=left;" value="[AF-002-2] 심각한 충돌 시 2차 충돌 위험" vertex="1">
+          <mxGeometry height="25" width="450" x="640" y="1536" as="geometry" />
+        </mxCell>
+        <mxCell id="46" parent="1" style="text;html=1;fontSize=12;fontColor=#424242;align=left;" value="→ BCM/IBU가 5~20초 지연 후 해제 명령 전송 (Continental 특허 기반)" vertex="1">
+          <mxGeometry height="25" width="700" x="660" y="1556" as="geometry" />
+        </mxCell>
+        <mxCell id="47" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#C62828;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="100" width="1600" x="580" y="1600" as="geometry" />
+        </mxCell>
+        <mxCell id="48" parent="1" style="text;html=1;fontSize=13;fontStyle=1;fillColor=#C62828;fontColor=#FFFFFF;rounded=1;spacing=4;" value="  exception  " vertex="1">
+          <mxGeometry height="25" width="100" x="580" y="1600" as="geometry" />
+        </mxCell>
+        <mxCell id="49" parent="1" style="text;html=1;fontSize=12;fontColor=#C62828;align=left;fontStyle=4;" value="[EF-002-1] 액추에이터 물리적 파손 → DCU NACK → BCM/IBU가 eCall에 &quot;도어 해제 실패&quot; 정보 포함 긴급 구조 요청" vertex="1">
+          <mxGeometry height="25" width="900" x="640" y="1628" as="geometry" />
+        </mxCell>
+        <mxCell id="50" parent="1" style="text;html=1;fontSize=12;fontColor=#C62828;align=left;fontStyle=4;" value="[EF-002-2] CAN + 아날로그 모두 두절 → 탑승자가 수동 비상 해제 레버(기계식) 사용 (Out-of-Scope)" vertex="1">
+          <mxGeometry height="25" width="900" x="640" y="1663" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
