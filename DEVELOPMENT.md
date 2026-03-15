@@ -37,12 +37,12 @@ C Standard : ISO/IEC 9899:2011 (C11)
 
 본 프로젝트에서는 다음 컴파일 환경을 사용한다.
 
-| 항목 | 환경 |
-|-----|-----|
-| Compiler | GCC |
-| Version | GCC 11 이상 |
-| OS | macOS / Linux |
-| Build Tool | Make |
+| 항목       | 환경          |
+| ---------- | ------------- |
+| Compiler   | GCC           |
+| Version    | GCC 11 이상   |
+| OS         | macOS / Linux |
+| Build Tool | Make          |
 
 컴파일 옵션
 -std=c11
@@ -58,6 +58,7 @@ C Standard : ISO/IEC 9899:2011 (C11)
 ---
 
 # 4. Project Directory Structure
+
 ```
 project-root
 │
@@ -76,13 +77,14 @@ project-root
 │
 └── Makefile
 ```
+
 설계 계층
 
-| Layer | 설명 |
-|-----|-----|
+| Layer    | 설명                            |
+| -------- | ------------------------------- |
 | boundary | ECU 인터페이스 (CAN, Sensor 등) |
-| control | 기능 로직 |
-| entity | 데이터 모델 |
+| control  | 기능 로직                       |
+| entity   | 데이터 모델                     |
 
 이는 UML **Boundary / Control / Entity 패턴**을 기반으로 한다.
 
@@ -93,6 +95,7 @@ project-root
 본 프로젝트는 UML 기반 설계를 수행한 후 코드를 구현한다.
 
 설계 프로세스
+
 ```
 Use Case 정의
 ↓
@@ -134,10 +137,10 @@ UC-003 : Rear Occupant Alert
 
 본 프로젝트에서는 다음 테스트 방식을 적용한다.
 
-| Test Type | Description |
-|----------|-------------|
-| Unit Test | 각 Controller 함수 검증 |
-| Simulation Test | 이벤트 기반 기능 검증 |
+| Test Type       | Description             |
+| --------------- | ----------------------- |
+| Unit Test       | 각 Controller 함수 검증 |
+| Simulation Test | 이벤트 기반 기능 검증   |
 
 테스트 방식
 센서 이벤트 입력
@@ -183,3 +186,13 @@ Test Case
 - MISRA C Rule Check
 - Continuous Integration
 - Code Coverage 측정
+
+---
+
+# 10. Implementation Rule
+
+모든 구현은 다음 원칙을 따른다.
+
+1. 코드가 반드시 컴파일 가능해야 한다.
+2. 상세 설계(UML)에 기반하여 구현한다.
+3. 설계에 없는 내용은 임의 구현 가능하나 주석으로 명시한다.
