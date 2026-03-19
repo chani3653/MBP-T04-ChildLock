@@ -9,11 +9,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    # 🔥 핵심: Makefile 위치로 이동
-    defaults:
-      run:
-        working-directory: SampleCodes/RearOccupantAlert
-
     steps:
       - name: Checkout source code
         uses: actions/checkout@v4
@@ -23,11 +18,21 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y build-essential
 
+      - name: Check directory
+        run: |
+          pwd
+          ls
+          ls SampleCodes
+          ls SampleCodes/RearOccupantAlert
+
       - name: Clean build
         run: make clean
+        working-directory: SampleCodes/RearOccupantAlert
 
       - name: Build project
         run: make
+        working-directory: SampleCodes/RearOccupantAlert
 
       - name: Run simulation
         run: make run
+        working-directory: SampleCodes/RearOccupantAlert
