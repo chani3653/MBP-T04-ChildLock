@@ -6,6 +6,18 @@ UML 기반 설계부터 구현, 빌드, 실행 검증까지 수행하는 것을 
 
 ---
 
+# 🔗 Wiki
+
+👉 프로젝트 상세 문서는 GitHub Wiki에서 확인할 수 있습니다.
+
+- 📄 [Project Overview](../../wiki/Overview)
+- 🧩 [System Architecture](../../wiki/Architecture)
+- 🔁 [Use Case & Flow](../../wiki/UseCase)
+- 🧪 [Verification & Test](../../wiki/Test)
+- 📊 [UML Diagrams](../../wiki/UML)
+
+---
+
 # 1. Project Overview
 
 ## 프로젝트명
