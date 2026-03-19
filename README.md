@@ -10,11 +10,9 @@ UML 기반 설계부터 구현, 빌드, 실행 검증까지 수행하는 것을 
 
 👉 프로젝트 상세 문서는 GitHub Wiki에서 확인할 수 있습니다.
 
-- 📄 [Project Overview](../../wiki/Overview)
-- 🧩 [System Architecture](../../wiki/Architecture)
-- 🔁 [Use Case & Flow](../../wiki/UseCase)
-- 🧪 [Verification & Test](../../wiki/Test)
-- 📊 [UML Diagrams](../../wiki/UML)
+- 📊 [System Benchmark & Analysis](../../wiki/System_Benchmark_and_Analysis)
+- 📄 [Software Requirement Specification (SRS)](../../wiki/SwRW_Software_Requirement_Specification)
+- 🧩 [Software Detailed Design (SDD)](../../wiki/SwDD_Software_Detailed_Design)
 
 ---
 
