@@ -1,0 +1,23 @@
+name: C CI Pipeline
+
+on:
+  push:
+    branches: [ "main", "develop" ]
+  pull_request:
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 코드 체크아웃
+        uses: actions/checkout@v4
+
+      - name: 빌드 도구 설치
+        run: sudo apt-get install -y build-essential
+
+      - name: 빌드
+        run: make
+
+      - name: 테스트
+        run: make test
