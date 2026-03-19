@@ -3,7 +3,8 @@
 # Model Version   : claude-sonnet-4-6
 
 CC      = gcc
-CFLAGS  = -std=c11 -Wall -Wextra -Werror -Iinclude
+# CFLAGS  = -std=c11 -Wall -Wextra -Werror -Iinclude
+CFLAGS = -std=c11 -Wall -Wextra -Werror -Iinclude -I. -Icontroller -Ientity -Iboundary
 LDFLAGS = -lm
 
 TARGET  = roa_simulation
