@@ -20,11 +20,11 @@ UML 기반 설계부터 구현, 빌드, 실행 검증까지 수행하는 것을 
 
 ## 프로젝트명
 
-**Rear Occupant Alert (ROA) Simulation**
+**ChildLock System Simulation**
 
 ## 프로젝트 목표
 
-- 차량 내 **Rear Occupant Alert(ROA)** 기능을 C 언어로 시뮬레이션
+- 차량 내 **ChildLock, EmergencyUnlock, Rear Occupant Alert(ROA)** 기능을 C 언어로 시뮬레이션
 - UML 기반 설계를 바탕으로 기능 구현
 - 요구사항 기반 시나리오 검증
 - GitHub Actions를 이용한 **자동 빌드 및 실행 검증(CI)** 환경 구성
@@ -73,6 +73,46 @@ UML 기반 설계부터 구현, 빌드, 실행 검증까지 수행하는 것을 
 │       ├── FlowChart
 │       └── AddFailureState
 └── SampleCodes
+    ├── ChildLockControl
+    │   ├── Makefile
+    │   ├── main.c
+    │   ├── include
+    │   │   └── ecl_types.h
+    │   ├── controller
+    │   │   ├── ecl_controller.c
+    │   │   └── ecl_controller.h
+    │   ├── entity
+    │   │   ├── lock_state.c
+    │   │   └── lock_state.h
+    │   └── boundary
+    │       ├── can_bus_if.c
+    │       ├── can_bus_if.h
+    │       ├── cluster_if.c
+    │       ├── cluster_if.h
+    │       ├── door_actuator_if.c
+    │       ├── door_actuator_if.h
+    │       ├── driver_button_if.c
+    │       └── driver_button_if.h
+    ├── EmergencyUnlock
+    │   ├── Makefile
+    │   ├── main.c
+    │   ├── include
+    │   │   └── eu_types.h
+    │   ├── controller
+    │   │   ├── emergency_controller.c
+    │   │   └── emergency_controller.h
+    │   ├── entity
+    │   │   ├── crash_event.c
+    │   │   ├── crash_event.h
+    │   │   ├── lock_state.c
+    │   │   └── lock_state.h
+    │   └── boundary
+    │       ├── airbag_if.c
+    │       ├── airbag_if.h
+    │       ├── can_bus_if.c
+    │       ├── can_bus_if.h
+    │       ├── door_actuator_if.c
+    │       └── door_actuator_if.h
     └── RearOccupantAlert
         ├── Makefile
         ├── main.c
@@ -111,9 +151,33 @@ UML 기반 설계부터 구현, 빌드, 실행 검증까지 수행하는 것을 
 
 ---
 
-# 5. Rear Occupant Alert Simulation
+# 5. Sample Codes Overview
 
-## 기능 설명
+본 프로젝트는 세 가지 주요 기능을 시뮬레이션합니다.
+
+## 5.1 ChildLockControl
+
+차량의 차일드락 기능을 제어하는 시스템입니다. 운전자의 버튼 입력에 따라 도어 액추에이터를 제어합니다.
+
+### 주요 컴포넌트
+- **Controller**: ECL Controller - 버튼 입력 처리 및 락 상태 관리
+- **Entity**: Lock State - 락 상태 저장
+- **Boundary**: CAN Bus IF, Cluster IF, Door Actuator IF, Driver Button IF
+
+## 5.2 EmergencyUnlock
+
+충돌 감지 시 자동으로 도어를 해제하는 긴급 해제 시스템입니다.
+
+### 주요 컴포넌트
+- **Controller**: Emergency Controller - 충돌 이벤트 처리
+- **Entity**: Crash Event, Lock State
+- **Boundary**: Airbag IF, CAN Bus IF, Door Actuator IF
+
+## 5.3 RearOccupantAlert
+
+후석 탑승자 감지 및 경고 시스템입니다.
+
+### 기능 설명
 
 ROA(Rear Occupant Alert)는 차량 내 후석 탑승자 또는 잔류 상황을 감지하고,  
 조건에 따라 경고를 수행하는 기능입니다.
@@ -143,27 +207,32 @@ ROA(Rear Occupant Alert)는 차량 내 후석 탑승자 또는 잔류 상황을 
 
 # 6. Build & Run
 
-## 실행 위치
+각 샘플 코드별로 빌드 및 실행 방법을 설명합니다.
+
+## 6.1 ChildLockControl
+
+```bash
+cd SampleCodes/ChildLockControl
+make
+make run
+make clean
+```
+
+## 6.2 EmergencyUnlock
+
+```bash
+cd SampleCodes/EmergencyUnlock
+make
+make run
+make clean
+```
+
+## 6.3 RearOccupantAlert
 
 ```bash
 cd SampleCodes/RearOccupantAlert
-```
-
-## 빌드
-
-```bash
 make
-```
-
-## 실행
-
-```bash
 make run
-```
-
-## 클린
-
-```bash
 make clean
 ```
 
