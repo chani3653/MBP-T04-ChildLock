@@ -9,6 +9,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        usecase:
+          - { name: "UC-001 ChildLockControl",  dir: "SampleCodes/ChildLockControl" }
+          - { name: "UC-002 EmergencyUnlock",    dir: "SampleCodes/EmergencyUnlock" }
+          - { name: "UC-003 RearOccupantAlert",  dir: "SampleCodes/RearOccupantAlert" }
+
+    name: ${{ matrix.usecase.name }}
+
     steps:
       - name: Checkout source code
         uses: actions/checkout@v4
@@ -18,21 +27,14 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y build-essential
 
-      - name: Check directory
-        run: |
-          pwd
-          ls
-          ls SampleCodes
-          ls SampleCodes/RearOccupantAlert
-
-      - name: Clean build
+      - name: Clean
         run: make clean
-        working-directory: SampleCodes/RearOccupantAlert
+        working-directory: ${{ matrix.usecase.dir }}
 
-      - name: Build project
+      - name: Build
         run: make
-        working-directory: SampleCodes/RearOccupantAlert
+        working-directory: ${{ matrix.usecase.dir }}
 
       - name: Run simulation
         run: make run
-        working-directory: SampleCodes/RearOccupantAlert
+        working-directory: ${{ matrix.usecase.dir }}
